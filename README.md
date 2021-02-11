@@ -1,2 +1,2 @@
 # A_Vast_Interest_bot
-elaborated collaboration
+The main idea is still to come. But it will come. Eventually.
