@@ -3,4 +3,4 @@ telebot
 pytelegrambotapi
 telebot
 boto3
-Pillow
+numpy
