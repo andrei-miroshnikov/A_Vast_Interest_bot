@@ -18,9 +18,9 @@ def send_welcome(message):
 @bot.message_handler(content_types=['text'])
 def send_text(message):
     if message.text in english_greetings:
-        bot.send_message(message.chat.id, f'english_greetings[np.random.randint(len(english_greetings))], {message.from_user.first_name})
+        bot.send_message(message.chat.id, f'english_greetings[np.random.random_integers(len(english_greetings))], {message.from_user.first_name})
     elif message.text in russian_greetings:
-        bot.send_message(message.chat.id, f'russian_greetings[np.random.randint(len(russian_greetings))], {message.from_user.first_name})
+        bot.send_message(message.chat.id, f'russian_greetings[np.random.random_integers(len(russian_greetings))], {message.from_user.first_name})
 @bot.message_handler(commands=['help'])
 def help_message(message):
     bot.send_message(message.chat.id, 'Ты попросил помощи, но помочь мне тебе нечем... вот тебе заглушка..', reply_markup=keyboard)
