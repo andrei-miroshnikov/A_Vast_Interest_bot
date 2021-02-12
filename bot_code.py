@@ -5,7 +5,7 @@ import os
 
 bot = telebot.TeleBot(os.environ.get('TOKEN'))
 
-english_greetings = ['Hi', 'Hey' 'Hello', 'Good to see you', 'I greet you']
+english_greetings = ['Hi', 'Hey', 'Hello', 'Good to see you', 'I greet you']
 russian_greetings = ['Привет', 'Здравствуй', 'Приветствую', 'Салют', 'Рад тебя видеть']
 
 keyboard = telebot.types.ReplyKeyboardMarkup(False,True)
@@ -14,7 +14,8 @@ keyboard.row('команда 1', 'команда 2', 'команда 3','ком�
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-         bot.reply_to(message, f'Привет, {message.from_user.first_name}. Инициализация прошла успешно. Для списка доступных команд напишите /help')
+         bot.reply_to(message, f'''Привет, {message.from_user.first_name}. Инициализация прошла успешно. Для списка доступных команд напишите /help.
+         А ещё я невероятно вежливый, так что можешь попробовать поприветствовать меня по-русски или по-английски''')
 
 
 @bot.message_handler(commands=['help'])
