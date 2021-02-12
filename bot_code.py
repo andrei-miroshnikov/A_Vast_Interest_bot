@@ -25,11 +25,11 @@ def help_message(message):
 @bot.message_handler(content_types=['text'])
 def send_text(message):
     for i in english_greetings:
-        if message.text == i:
-            bot.send_message(message.chat.id, english_greetings[np.random.random_integers(len(english_greetings))], ',', {message.from_user.first_name})
+        if message.text.capitalize() == i:
+            bot.send_message(message.chat.id, english_greetings[int(np.random.randint(len(english_greetings)))], ',', {message.from_user.first_name})
     for n in russian_greetings:
-        if message.text == n:
-            bot.send_message(message.chat.id, russian_greetings[np.random.random_integers(len(russian_greetings))], ',', {message.from_user.first_name})
+        if message.text.capitalize() == n:
+            bot.send_message(message.chat.id, russian_greetings[int(np.random.randint(len(russian_greetings)))], ',', {message.from_user.first_name})
 
 
 
